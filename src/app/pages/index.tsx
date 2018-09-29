@@ -1,4 +1,6 @@
+import InlineSVG from 'svg-inline-react';
 import 'static/css/app.styl';
+import logo from 'static/image/logo.svg';
 
 export default () => (
   <div class="t-general">
@@ -13,13 +15,7 @@ export default () => (
     </nav>
 
     <div class="o-main-visual" id="top">
-      <div class="o-main-visual__logo-wrapper">
-        <img class="o-main-visual__logo"
-             alt="OY brigade"
-             src="/static/image/logo.png"
-             srcset="/static/image/logo.png 1x,/static/image/logo@2x.png 2x"/>
-        <div class="o-main-visual__name">OY brigade</div>
-      </div>
+      <InlineSVG className="o-main-visual__logo-wrapper" element="div" src={logo} />
     </div>
 
     <section class="o-home-section" id="about">
@@ -74,8 +70,8 @@ export default () => (
             <div class="m-home-team__member-name">がんたん</div>
             <div class="m-home-team__member-role">Illust</div>
             <ul class="m-home-team__member-contacts">
-              <li>@guntankoba (Twitter)</li>
-              <li>guntankoba (pixiv)</li>
+              <li><a href="https://twitter.com/guntankoba" target="_blank">@guntankoba (Twitter)</a></li>
+              <li><a href="https://pixiv.me/guntankoba" target="_blank">guntankoba (pixiv)</a></li>
             </ul>
           </div>
           <div class="m-home-team__member">
@@ -85,7 +81,7 @@ export default () => (
             <div class="m-home-team__member-name">くれいじー</div>
             <div class="m-home-team__member-role">Illust</div>
             <ul class="m-home-team__member-contacts">
-              <li>@crazy_life1122 (Twitter)</li>
+              <li><a href="https://twitter.com/crazy_life1122" target="_blank">@crazy_life1122 (Twitter)</a></li>
             </ul>
           </div>
           <div class="m-home-team__member">
@@ -95,7 +91,7 @@ export default () => (
             <div class="m-home-team__member-name">パフーハ</div>
             <div class="m-home-team__member-role">Program</div>
             <ul class="m-home-team__member-contacts">
-              <li>@pafuuha (Twitter)</li>
+              <li><a href="https://twitter.com/pafuuha" target="_blank">@pafuuha (Twitter)</a></li>
             </ul>
           </div>
           <div class="m-home-team__member">
@@ -105,8 +101,8 @@ export default () => (
             <div class="m-home-team__member-name">Nasubeing</div>
             <div class="m-home-team__member-role">Sound</div>
             <ul class="m-home-team__member-contacts">
-              <li>@Nasubenign (Twitter)</li>
-              <li>nasubeing (SoundCloud)</li>
+              <li><a href="https://twitter.com/Nasubenign" target="_blank">@Nasubenign (Twitter)</a></li>
+              <li><a href="https://soundcloud.com/nasubeing" target="_blank">nasubeing (SoundCloud)</a></li>
             </ul>
           </div>
           <div class="m-home-team__member">
@@ -116,7 +112,7 @@ export default () => (
             <div class="m-home-team__member-name">Yadex205</div>
             <div class="m-home-team__member-role">Web</div>
             <ul class="m-home-team__member-contacts">
-              <li>@yadex205_vj (Twitter)</li>
+              <li><a href="https://twitter.com/yadex205_vj" target="_blank">@yadex205_vj (Twitter)</a></li>
             </ul>
           </div>
         </main>
