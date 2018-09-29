@@ -6,7 +6,7 @@ interface HomeWorkProps {
 export function HomeWorkImage(props) {
   const { src } = props;
 
-  return <div><img alt="" src={src} /></div>;
+  return <div><img alt="image" src={src} /></div>;
 }
 
 export default function HomeWork(props) {

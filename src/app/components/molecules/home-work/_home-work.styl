@@ -8,7 +8,7 @@
 
   &__images
     display flex
-    height 200px
+    height 300px
     margin: 24px 0
     flex-direction column
     flex-wrap wrap
@@ -40,6 +40,7 @@
         max-height 100%
 
       & > img
+        display block
         border-radius 5px
 
       &:hover
@@ -75,3 +76,26 @@
   &__date
     line-height 1
     font-size 14px
+
+@media screen and (max-width 1024px)
+  .m-home-work
+    &__images
+      height 200px
+
+@media screen and (max-width 864px)
+  .m-home-work
+    &__images
+      display block
+      height auto
+
+      & > div
+        width 100%
+
+        & + div
+          margin-top 20px
+
+    &__info
+      display block
+
+    &__date
+      margin-top 12px
