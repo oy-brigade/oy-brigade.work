@@ -1,18 +1,14 @@
 import InlineSVG from 'svg-inline-react';
+
 import 'static/css/app.styl';
 import logo from 'static/image/logo.svg';
+import Nav from 'components/organisms/nav/_nav';
 
-export default () => (
+const navItems = [['#top', 'Top'], ['#about', 'About'], ['#works', 'Works'], ['#team', 'Team'], ['#contact', 'Contact']];
+
+export default (props) => (
   <div class="t-general">
-    <nav class="o-nav">
-      <ul>
-        <li><a href="#top">Top</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#works">Works</a></li>
-        <li><a href="#team">Team</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <Nav items={navItems} />
 
     <div class="o-main-visual" id="top">
       <InlineSVG className="o-main-visual__logo-wrapper" element="div" src={logo} />
