@@ -1,0 +1,6 @@
+/node_modules
+.next
+/dist
+
+.firebaserc
+firebase-debug.log

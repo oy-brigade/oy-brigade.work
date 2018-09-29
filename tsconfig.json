@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "lib": ["dom", "es2018"]
+  }
+}

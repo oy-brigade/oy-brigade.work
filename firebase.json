@@ -1,0 +1,15 @@
+{
+  "functions": {
+    "source": "dist"
+  },
+  "hosting": {
+    "public": "dist/public",
+    "ignore": [
+      "**/node_modules/**",
+      "firebase.json"
+    ],
+    "rewrites": [
+      { "source": "**", "function": "next" }
+    ]
+  }
+}
