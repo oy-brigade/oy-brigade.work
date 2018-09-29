@@ -1,12 +1,7 @@
 const withTypeScript = require('@zeit/next-typescript');
 const withPreact = require('@zeit/next-preact');
-const withSass = require('@zeit/next-sass');
+const withStylus = require('@zeit/next-stylus');
 
-const sassGlobImporter = require('node-sass-glob-importer');
-
-module.exports = withSass(withTypeScript(withPreact({
-  sassLoaderOptions: {
-    importer: sassGlobImporter()
-  },
+module.exports = withStylus(withTypeScript(withPreact({
   distDir: '../../dist/app'
 })));

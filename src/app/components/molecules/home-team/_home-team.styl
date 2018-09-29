@@ -1,0 +1,42 @@
+.m-home-team
+  display flex
+  flex-wrap wrap
+  justify-content space-between
+
+  &__member
+    position relative
+    margin-bottom 20px
+    padding 20px
+    border 2px solid #445
+    border-radius 4px
+    flex 0 1 45%
+    box-sizing border-box
+    overflow hidden
+    z-index 1
+
+  &__member-icon-wrapper
+    padding-bottom 20px
+    border-bottom 1px solid #445
+
+  &__member-icon
+    display block
+    width 90px
+    height 90px
+    margin 0 auto
+    border-radius 45px
+    background-color $green
+
+  &__member-name
+    margin-top 24px
+    line-height 1
+    font-size 20px
+
+  &__member-role
+    margin-top 6px
+    font-size: 14px
+
+  &__member-contacts
+    margin-top 12px
+
+    & > li
+      font-size 14px

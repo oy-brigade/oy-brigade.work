@@ -22,6 +22,7 @@ namespace('build', () => {
   task('app', { async: true }, async () => {
     await buildNext('./src/app')
     await fse.copy('./dist/app/static', './dist/public/_next/static');
+    await fse.copy('./src/app/static', './dist/public/static');
   });
 
   task('function', { async: true }, async () => {

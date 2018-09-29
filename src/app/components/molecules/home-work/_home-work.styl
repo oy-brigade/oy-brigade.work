@@ -1,0 +1,44 @@
+.m-home-work
+  padding 0 24px
+  border 2px solid #445
+  border-radius 4px
+
+  & + .m-home-work
+    margin-top 24px
+
+  &__images
+    display flex
+    height 200px
+    margin: 24px 0
+    flex-direction column
+    flex-wrap wrap
+
+    &:empty::before
+      content '画像準備中'
+
+    & > div
+      width calc(100% / 3)
+      height 50%
+      padding 3px
+      border-radius 7px
+      box-sizing border-box
+      background-color $green
+      background-clip content-box
+
+      &:first-child
+        height 100%
+
+  &__info
+    display flex
+    padding 24px 0
+    justify-content space-between
+    align-items flex-end
+    border-top: 1px solid #445
+
+  &__title
+    line-height 1
+    font-size 24px
+
+  &__date
+    line-height 1
+    font-size 14px

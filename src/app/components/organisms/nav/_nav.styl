@@ -1,0 +1,56 @@
+.o-nav
+  line-height 1
+  font-size 32px
+  font-family "Ropa Sans", sans-serif
+
+  & > ul
+    padding 40px 20px
+    border-radius 4px
+    background-color transparent
+    opacity 0.5
+    transition-property opacity, background-color, box-shadow
+    transition-duration 0.5s
+    transition-timing-function $bezier
+
+    &:hover
+      opacity 1.0
+      background-color #fff
+      box-shadow 6px 6px 24px rgba(0, 0, 0, 0.1)
+
+    & > li
+      position relative
+      z-index 1
+      text-align center
+      color #666
+      transition color 0.5s $bezier
+
+      & > a
+        display block
+        padding 10px
+
+      &::before
+        content ''
+        position absolute
+        width 0%
+        height 0%
+        left 50%
+        top 50%
+        border-radius 50%
+        z-index -1
+        background-color $green
+        transition-property width, height, left, top, border-radius
+        transition-duration 0.5s
+        transition-timing-function $bezier
+
+      &:hover
+        color #fff
+
+        &::before
+          width 100%
+          height 100%
+          left 0
+          top 0
+          border-radius 12px
+
+      & + li
+        margin-top 20px
