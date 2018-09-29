@@ -3,6 +3,8 @@ import InlineSVG from 'svg-inline-react';
 import 'static/css/app.styl';
 import logo from 'static/image/logo.svg';
 import Nav from 'components/organisms/nav/_nav';
+import HomeWork from 'components/molecules/home-work/_home-work';
+import HomeTeam, { HomeTeamMember } from 'components/molecules/home-team/_home-team';
 
 const navItems = [['#top', 'Top'], ['#about', 'About'], ['#works', 'Works'], ['#team', 'Team'], ['#contact', 'Contact']];
 
@@ -29,28 +31,9 @@ export default (props) => (
       <div class="t-general__normal-layout">
         <header class="o-home-section__title">Works</header>
         <main class="o-home-section__content">
-          <div class="m-home-work">
-            <div class="m-home-work__images"></div>
-            <footer class="m-home-work__info">
-              <div class="m-home-work__title">音ハメ(仮)</div>
-              <div class="m-home-work__date">2018・C94にて頒布</div>
-            </footer>
-          </div>
-          <div class="m-home-work">
-            <div class="m-home-work__images"></div>
-            <footer class="m-home-work__info">
-              <div class="m-home-work__title">Right → Right 2</div>
-              <div class="m-home-work__date">2017・C93にて頒布</div>
-            </footer>
-
-          </div>
-          <div class="m-home-work">
-            <div class="m-home-work__images"></div>
-            <footer class="m-home-work__info">
-              <div class="m-home-work__title">Right → Right</div>
-              <div class="m-home-work__date">2016・C91にて頒布</div>
-            </footer>
-          </div>
+          <HomeWork title="音ハメ(仮)" date="2018・C94にて頒布"></HomeWork>
+          <HomeWork title="Right → Right 2" date="2017・C93にて頒布"></HomeWork>
+          <HomeWork title="Right → Right" date="2016・C91にて頒布"></HomeWork>
         </main>
       </div>
     </section>
@@ -58,59 +41,14 @@ export default (props) => (
     <section class="o-home-section" id="team">
       <div class="t-general__normal-layout">
         <header class="o-home-section__title">Team</header>
-        <main class="o-home-section__content m-home-team">
-          <div class="m-home-team__member">
-            <div class="m-home-team__member-icon-wrapper">
-              <img class="m-home-team__member-icon" alt="" src="" />
-            </div>
-            <div class="m-home-team__member-name">がんたん</div>
-            <div class="m-home-team__member-role">Illust</div>
-            <ul class="m-home-team__member-contacts">
-              <li><a href="https://twitter.com/guntankoba" target="_blank">@guntankoba (Twitter)</a></li>
-              <li><a href="https://pixiv.me/guntankoba" target="_blank">guntankoba (pixiv)</a></li>
-            </ul>
-          </div>
-          <div class="m-home-team__member">
-            <div class="m-home-team__member-icon-wrapper">
-              <img class="m-home-team__member-icon" alt="" src="" />
-            </div>
-            <div class="m-home-team__member-name">くれいじー</div>
-            <div class="m-home-team__member-role">Illust</div>
-            <ul class="m-home-team__member-contacts">
-              <li><a href="https://twitter.com/crazy_life1122" target="_blank">@crazy_life1122 (Twitter)</a></li>
-            </ul>
-          </div>
-          <div class="m-home-team__member">
-            <div class="m-home-team__member-icon-wrapper">
-              <img class="m-home-team__member-icon" alt="" src="" />
-            </div>
-            <div class="m-home-team__member-name">パフーハ</div>
-            <div class="m-home-team__member-role">Program</div>
-            <ul class="m-home-team__member-contacts">
-              <li><a href="https://twitter.com/pafuuha" target="_blank">@pafuuha (Twitter)</a></li>
-            </ul>
-          </div>
-          <div class="m-home-team__member">
-            <div class="m-home-team__member-icon-wrapper">
-              <img class="m-home-team__member-icon" alt="" src="" />
-            </div>
-            <div class="m-home-team__member-name">Nasubeing</div>
-            <div class="m-home-team__member-role">Sound</div>
-            <ul class="m-home-team__member-contacts">
-              <li><a href="https://twitter.com/Nasubenign" target="_blank">@Nasubenign (Twitter)</a></li>
-              <li><a href="https://soundcloud.com/nasubeing" target="_blank">nasubeing (SoundCloud)</a></li>
-            </ul>
-          </div>
-          <div class="m-home-team__member">
-            <div class="m-home-team__member-icon-wrapper">
-              <img class="m-home-team__member-icon" alt="" src="" />
-            </div>
-            <div class="m-home-team__member-name">Yadex205</div>
-            <div class="m-home-team__member-role">Web</div>
-            <ul class="m-home-team__member-contacts">
-              <li><a href="https://twitter.com/yadex205_vj" target="_blank">@yadex205_vj (Twitter)</a></li>
-            </ul>
-          </div>
+        <main class="o-home-section__content">
+          <HomeTeam>
+            <HomeTeamMember name="がんたん" role="Illust" twitter="guntankoba" pixiv="guntankoba" />
+            <HomeTeamMember name="くれいじー" role="Illust" twitter="crazy_life1122" />
+            <HomeTeamMember name="パフーハ" role="Program" twitter="pafuuha" />
+            <HomeTeamMember name="Nasubeing" role="Sound" twitter="Nasubenign" soundcloud="nasubeing" />
+            <HomeTeamMember name="Yadex205" role="Web" twitter="yadex205_vj" />
+          </HomeTeam>
         </main>
       </div>
     </section>
