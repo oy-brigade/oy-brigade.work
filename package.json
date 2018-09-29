@@ -8,7 +8,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production jake clean build",
     "develop": "node ./src/functions/index.js",
-    "emulate": "npm run build && firebase serve --only hosting,functions"
+    "emulate": "npm run build && firebase serve --host=0.0.0.0 --only hosting,functions"
   },
   "engines": {
     "node": "8"
@@ -17,27 +17,27 @@
     "@zeit/next-preact": "^0.1.0",
     "@zeit/next-stylus": "^1.0.1",
     "@zeit/next-typescript": "^1.1.1",
+    "bowser": "^2.0.0-beta.3",
     "firebase-admin": "^6.0.0",
     "firebase-functions": "^2.0.5",
+    "jquery": "^3.3.1",
     "next": "^7.0.0",
     "preact": "^8.3.1",
     "preact-compat": "^3.18.4",
     "raw-loader": "^0.5.1",
-    "reset-css": "^4.0.1"
+    "reset-css": "^4.0.1",
+    "svg-inline-react": "^3.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-plugin-transform-node-env-inline": "^0.4.3",
-    "bowser": "^2.0.0-beta.3",
     "cross-env": "^5.2.0",
     "firebase-tools": "^4.2.1",
     "fs-extra": "^7.0.0",
     "jake": "^8.0.18",
-    "jquery": "^3.3.1",
     "node-sass": "^4.9.3",
-    "stylus": "^0.54.5",
-    "svg-inline-react": "^3.1.0"
+    "stylus": "^0.54.5"
   }
 }
