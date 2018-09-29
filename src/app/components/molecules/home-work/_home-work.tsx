@@ -3,13 +3,19 @@ interface HomeWorkProps {
   date: string;
 };
 
+export function HomeWorkImage(props) {
+  const { src } = props;
+
+  return <div><img alt="" src={src} /></div>;
+}
+
 export default function HomeWork(props) {
-  const { title, date } = props;
+  const { title, date, children } = props;
 
   return (
     <div class="m-home-work">
       <div class="m-home-work__images">
-
+        {children}
       </div>
 
       <footer class="m-home-work__info">

@@ -2,14 +2,15 @@ import InlineSVG from 'svg-inline-react';
 
 import 'static/css/app.styl';
 import logo from 'static/image/logo.svg';
+import General from 'components/templates/general/_general';
 import Nav from 'components/organisms/nav/_nav';
-import HomeWork from 'components/molecules/home-work/_home-work';
+import HomeWork, { HomeWorkImage } from 'components/molecules/home-work/_home-work';
 import HomeTeam, { HomeTeamMember } from 'components/molecules/home-team/_home-team';
 
 const navItems = [['#top', 'Top'], ['#about', 'About'], ['#works', 'Works'], ['#team', 'Team'], ['#contact', 'Contact']];
 
 export default (props) => (
-  <div class="t-general">
+  <General {...props}>
     <Nav items={navItems} />
 
     <div class="o-main-visual" id="top">
@@ -31,8 +32,14 @@ export default (props) => (
       <div class="t-general__normal-layout">
         <header class="o-home-section__title">Works</header>
         <main class="o-home-section__content">
-          <HomeWork title="音ハメ(仮)" date="2018・C94にて頒布"></HomeWork>
-          <HomeWork title="Right → Right 2" date="2017・C93にて頒布"></HomeWork>
+          <HomeWork title="音ハメ(仮)" date="2018・C94にて頒布">
+            <HomeWorkImage src="/static/image/otohame-kari/capture01.jpg" />
+            <HomeWorkImage src="/static/image/otohame-kari/capture02.png" />
+          </HomeWork>
+          <HomeWork title="Right → Right 2" date="2017・C93にて頒布">
+            <HomeWorkImage src="/static/image/rir02/logo.png" />
+            <HomeWorkImage src="/static/image/rir02/image01.png" />
+          </HomeWork>
           <HomeWork title="Right → Right" date="2016・C91にて頒布"></HomeWork>
         </main>
       </div>
@@ -67,5 +74,5 @@ export default (props) => (
     <footer class="o-footer">
       <div class="o-footer__copy">Copyright 2016-current OY brigade All rights reserved.</div>
     </footer>
-  </div>
+  </General>
 );
