@@ -1,5 +1,6 @@
 import InlineSVG from 'svg-inline-react';
 
+import CommonHead from '../lib/common-head';
 import 'static/css/app.styl';
 import logo from 'static/image/logo.svg';
 import General from 'components/templates/general/_general';
@@ -11,6 +12,8 @@ const navItems = [['#top', 'Top'], ['#about', 'About'], ['#works', 'Works'], ['#
 
 export default (props) => (
   <General {...props}>
+    <CommonHead></CommonHead>
+
     <Nav items={navItems} />
 
     <div class="o-main-visual" id="top">

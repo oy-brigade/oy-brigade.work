@@ -3,11 +3,19 @@
     max-width 1200px
     margin 0 auto
     padding 0 100px 0 300px
+    transition padding 0.5s
 
   .o-nav
-    display flex
     position fixed
     left 80px
-    height 100%
-    align-items center
     z-index 100
+
+@media screen and (max-width: 864px)
+  .t-general
+    &__normal-layout
+      padding 0 24px
+
+    .o-nav
+      position fixed
+      left 0
+      top 0
