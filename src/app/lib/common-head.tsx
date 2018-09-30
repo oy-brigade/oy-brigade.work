@@ -11,6 +11,7 @@ export default function CommonHead(props) {
     <Head>
       <title>{title}</title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link href="/static/favicon.svg" rel="shortcut icon" type="image/svg+xml" sizes="any" />
     </Head>
   );
 }
