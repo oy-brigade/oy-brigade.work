@@ -1,6 +1,7 @@
 import InlineSVG from 'svg-inline-react';
 
-import CommonHead from '../lib/common-head';
+import CommonHead from 'lib/common-head';
+import { description } from 'lib/constants';
 import 'static/css/app.styl';
 import logo from 'static/image/logo.svg';
 import General from 'components/templates/general/_general';
@@ -23,11 +24,7 @@ export default (props) => (
     <section class="o-home-section" id="about">
       <div class="t-general__normal-layout">
         <header class="o-home-section__title">About</header>
-        <main class="o-home-section__content">
-          OY旅団 (OY brigade)は、オリジナルゲームの制作を主な活動とする同人サークルです。
-          主人公をアイテムだけでゴールへ導く「Right → Right」などをはじめ、
-          制作したオリジナルの同人ゲームをコミックマーケット等で頒布しております。
-        </main>
+        <main class="o-home-section__content">{description}</main>
       </div>
     </section>
 
