@@ -66,6 +66,7 @@ export default (props) => (
         <main class="o-home-section__content m-home-contact">
           <ul>
             <li><a href="https://twitter.com/oy_brigade" target="_blank">@oy_brigade</a> on Twitter</li>
+            <li>oybrigade@gmail.com</li>
           </ul>
         </main>
       </div>
