@@ -10,6 +10,10 @@
     ],
     "rewrites": [
       { "source": "**", "function": "next" }
+    ],
+    "redirects": [
+      { "source": "/otohame-kari", "destination": "https://oy-brigade.github.io/otohame-kari", "type": 302 },
+      { "source": "/otohame-kari/*", "destination": "https://oy-brigade.github.io/otohame-kari", "type": 302 }
     ]
   }
 }
