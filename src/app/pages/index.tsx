@@ -1,6 +1,6 @@
+ // @ts-ignore: Avoid noImplicitAny: true error.
 import InlineSVG from 'svg-inline-react';
 
-import CommonHead from 'lib/common-head';
 import { description } from 'lib/constants';
 import 'static/css/app.styl';
 import logo from 'static/image/logo.svg';
@@ -13,8 +13,6 @@ const navItems = [['#top', 'Top'], ['#about', 'About'], ['#works', 'Works'], ['#
 
 export default (props) => (
   <General {...props}>
-    <CommonHead></CommonHead>
-
     <Nav items={navItems} />
 
     <div class="o-main-visual" id="top">

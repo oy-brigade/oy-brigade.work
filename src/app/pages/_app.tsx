@@ -1,5 +1,8 @@
-import App, { Container } from 'next/app';
+import App, { NextAppContext, Container } from 'next/app';
+import Head from 'next/head';
 import bowser from 'bowser';
+
+import { description as DESCRIPTION } from 'lib/constants';
 
 export interface PageProps {
   browserInfo: { browser: any; os: any; engine: any; platform: any };
