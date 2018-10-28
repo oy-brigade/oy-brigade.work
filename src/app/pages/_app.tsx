@@ -1,21 +1,10 @@
-import App, { NextAppContext, Container } from 'next/app';
-import Head from 'next/head';
-import bowser from 'bowser';
+import App, { NextAppContext, DefaultAppIProps, AppProps, Container } from 'next/app';
 
 import { description as DESCRIPTION } from 'lib/constants';
 
-export interface PageProps {
-  browserInfo: { browser: any; os: any; engine: any; platform: any };
-};
-
 export default class extends App {
-  props: {
-    Component: any;
-    pageProps: PageProps;
-  };
-
-  static async getInitialProps ({ Component, ctx, req }) {
-    let pageProps = {};
+  static async getInitialProps ({ Component, ctx }: NextAppContext): Promise<DefaultAppIProps> {
+    let pageProps: DefaultAppIProps = {} as DefaultAppIProps;
 
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps(ctx);
@@ -23,8 +12,7 @@ export default class extends App {
 
     return {
       pageProps: {
-        ...pageProps,
-        browserInfo: bowser.parse(ctx.req.headers['user-agent'])
+        ...pageProps
       }
     };
   }

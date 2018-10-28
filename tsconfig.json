@@ -12,6 +12,7 @@
       "lib/*": ["./src/app/lib/*"],
       "static/*": ["./src/app/static/*"]
     },
-    "strict": true
+    "strict": true,
+    "allowSyntheticDefaultImports": true
   }
 }

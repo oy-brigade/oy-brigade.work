@@ -1,15 +1,14 @@
-import { Component } from 'preact';
+import React from 'react';
 import Link from 'next/link';
 import InlineSVG from 'svg-inline-react';
 
-import bowser from 'bowser';
 import $ from 'jquery';
 
 interface NavProps {
   items: ReadonlyArray<Array<string>>
 };
 
-export default class Nav extends Component<NavProps> {
+export default class Nav extends React.Component<NavProps> {
   private isWebkit: boolean;
   private spMenuActive: boolean;
   state: {
@@ -26,7 +25,7 @@ export default class Nav extends Component<NavProps> {
   }
 
   componentDidMount() {
-    this.isWebkit = bowser.parse(window.navigator.userAgent).engine.name === 'WebKit';
+    this.isWebkit = false // bowser.parse(window.navigator.userAgent).engine.name === 'WebKit';
     window.addEventListener('resize', () => this.setState({ spMenuVisible: false }));
   }
 

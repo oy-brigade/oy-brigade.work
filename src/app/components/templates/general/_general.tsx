@@ -1,20 +1,11 @@
-import { Component } from 'preact';
-import bowser from 'bowser';
+import React from 'react';
 import { PageProps } from 'pages/_app';
 
-export default class extends Component {
+export default class extends React.Component {
   props: PageProps;
-
-  get classNames() {
-    const names = ['t-general'];
-    const { browser, os } = this.props.browserInfo;
-    names.push(browser.name === 'Internet Explorer' ? 'is-ie' : 'is-not-ie');
-    return names.join(' ');
-  }
-
   render() {
     return (
-      <div class={this.classNames}>
+      <div className="t-general">
         {this.props.children}
       </div>
     );
