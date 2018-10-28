@@ -15,21 +15,21 @@ export default (props) => (
   <General {...props}>
     <Nav items={navItems} />
 
-    <div class="o-main-visual" id="top">
+    <div className="o-main-visual" id="top">
       <InlineSVG className="o-main-visual__logo-wrapper" element="div" src={logo} />
     </div>
 
-    <section class="o-home-section" id="about">
-      <div class="t-general__normal-layout">
-        <header class="o-home-section__title">About</header>
-        <main class="o-home-section__content">{description}</main>
+    <section className="o-home-section" id="about">
+      <div className="t-general__normal-layout">
+        <header className="o-home-section__title">About</header>
+        <main className="o-home-section__content">{description}</main>
       </div>
     </section>
 
-    <section class="o-home-section" id="works">
-      <div class="t-general__normal-layout">
-        <header class="o-home-section__title">Works</header>
-        <main class="o-home-section__content">
+    <section className="o-home-section" id="works">
+      <div className="t-general__normal-layout">
+        <header className="o-home-section__title">Works</header>
+        <main className="o-home-section__content">
           <HomeWork title="音ハメ(仮)" date="2018・C94にて頒布">
             <HomeWorkImage src="/static/image/otohame-kari/capture01.jpg" />
             <HomeWorkImage src="/static/image/otohame-kari/capture02.png" />
@@ -43,10 +43,10 @@ export default (props) => (
       </div>
     </section>
 
-    <section class="o-home-section" id="team">
-      <div class="t-general__normal-layout">
-        <header class="o-home-section__title">Team</header>
-        <main class="o-home-section__content">
+    <section className="o-home-section" id="team">
+      <div className="t-general__normal-layout">
+        <header className="o-home-section__title">Team</header>
+        <main className="o-home-section__content">
           <HomeTeam>
             <HomeTeamMember name="がんたん" role="Illust" twitter="guntankoba" pixiv="guntankoba" />
             <HomeTeamMember name="くれいじー" role="Illust" twitter="crazy_life1122" />
@@ -58,10 +58,10 @@ export default (props) => (
       </div>
     </section>
 
-    <section class="o-home-section" id="contact">
-      <div class="t-general__normal-layout">
-        <header class="o-home-section__title">Contact</header>
-        <main class="o-home-section__content m-home-contact">
+    <section className="o-home-section" id="contact">
+      <div className="t-general__normal-layout">
+        <header className="o-home-section__title">Contact</header>
+        <main className="o-home-section__content m-home-contact">
           <ul>
             <li><a href="https://twitter.com/oy_brigade" target="_blank">@oy_brigade</a> on Twitter</li>
             <li>oybrigade@gmail.com</li>
@@ -70,8 +70,8 @@ export default (props) => (
       </div>
     </section>
 
-    <footer class="o-footer">
-      <div class="o-footer__copy">Copyright 2016-current OY brigade All rights reserved.</div>
+    <footer className="o-footer">
+      <div className="o-footer__copy">Copyright 2016-current OY brigade All rights reserved.</div>
     </footer>
   </General>
 );

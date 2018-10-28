@@ -999,6 +999,12 @@
     "@types/node" "*"
     "@types/request" "*"
 
+"@types/jquery@^3.3.22":
+  version "3.3.22"
+  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.3.22.tgz#cde55dc8f83207dffd16205b05f97ce824581735"
+  dependencies:
+    "@types/sizzle" "*"
+
 "@types/jsonwebtoken@^7.2.6":
   version "7.2.8"
   resolved "https://registry.yarnpkg.com/@types/jsonwebtoken/-/jsonwebtoken-7.2.8.tgz#8d199dab4ddb5bba3234f8311b804d2027af2b3a"
@@ -1089,6 +1095,10 @@
   dependencies:
     "@types/express-serve-static-core" "*"
     "@types/mime" "*"
+
+"@types/sizzle@*":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@types/sizzle/-/sizzle-2.3.2.tgz#a811b8c18e2babab7d542b3365887ae2e4d9de47"
 
 "@types/tapable@*":
   version "1.0.4"
@@ -1792,6 +1802,10 @@ boom@5.x.x:
   resolved "https://registry.yarnpkg.com/boom/-/boom-5.2.0.tgz#5dd9da6ee3a5f302077436290cb717d3f4a54e02"
   dependencies:
     hoek "4.x.x"
+
+bowser@^2.0.0-beta.3:
+  version "2.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/bowser/-/bowser-2.0.0-beta.3.tgz#1b74d4fd69199aa237bc0f1f4c5e80df711635d8"
 
 boxen@^1.2.1:
   version "1.3.0"

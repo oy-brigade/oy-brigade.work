@@ -1,6 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
+
+// @ts-ignore
 import InlineSVG from 'svg-inline-react';
+
+// @ts-ignore
+import bowser from 'bowser';
 
 import $ from 'jquery';
 
@@ -9,13 +14,13 @@ interface NavProps {
 };
 
 export default class Nav extends React.Component<NavProps> {
-  private isWebkit: boolean;
-  private spMenuActive: boolean;
+  private isWebkit: boolean = false;
+  private spMenuActive: boolean = false;
   state: {
     spMenuVisible: boolean;
   };
 
-  constructor(props) {
+  constructor(props: NavProps) {
     super(props);
     this.handleHashClick = this.handleHashClick.bind(this);
     this.handleSpMenuButtonClick = this.handleSpMenuButtonClick.bind(this);
@@ -25,11 +30,11 @@ export default class Nav extends React.Component<NavProps> {
   }
 
   componentDidMount() {
-    this.isWebkit = false // bowser.parse(window.navigator.userAgent).engine.name === 'WebKit';
+    this.isWebkit = bowser.parse(window.navigator.userAgent).engine.name === 'WebKit';
     window.addEventListener('resize', () => this.setState({ spMenuVisible: false }));
   }
 
-  private handleHashClick(event, hash) {
+  private handleHashClick(event: React.MouseEvent<HTMLAnchorElement>, hash: string) {
     const id = hash.startsWith('#') ? hash.slice(1) : hash;
     const pos = document.getElementById(id).getBoundingClientRect().top;
     const scrollable = $(this.isWebkit ? 'body' : 'html');
@@ -58,25 +63,30 @@ export default class Nav extends React.Component<NavProps> {
 
     const itemEls = items.map(item => {
       const [path, label, options = {}] = item;
-      const callback = (event) => {
-        console.log(window)
-      };
       if (path.startsWith('#')) {
-        return <li><a href={path} onClick={(event) => this.handleHashClick(event, path)}>{label}</a></li>
+        return (
+          <li key={path}>
+            <a href={path} onClick={(event) => this.handleHashClick(event, path)}>{label}</a>
+          </li>
+        )
       } else {
-        return <li><Link href={path}><a>{label}</a></Link></li>
+        return (
+          <li key={path}>
+            <Link href={path}><a>{label}</a></Link>
+          </li>
+        )
       }
     });
 
     return (
-      <nav class={this.navClassNames}>
-        <div class="o-nav__sp-menu-button" onClick={this.handleSpMenuButtonClick}>
-          <i class="a-icon a-icon--hamburger"></i>
+      <nav className={this.navClassNames}>
+        <div className="o-nav__sp-menu-button" onClick={this.handleSpMenuButtonClick}>
+          <i className="a-icon a-icon--hamburger"></i>
         </div>
-        <ul class="o-nav__pc-menu">
+        <ul className="o-nav__pc-menu">
           {itemEls}
         </ul>
-        <ul class="o-nav__sp-menu">
+        <ul className="o-nav__sp-menu">
           {itemEls}
         </ul>
       </nav>
