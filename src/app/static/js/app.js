@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import bowser from 'bowser';
 
 document.addEventListener('DOMContentLoaded', () => {
