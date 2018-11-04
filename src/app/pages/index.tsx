@@ -1,4 +1,5 @@
 import React from 'react';
+import { NextContext } from 'next';
 import Link from 'next/link';
 import $ from 'jquery';
 
@@ -6,7 +7,7 @@ import $ from 'jquery';
 import InlineSVG from 'svg-inline-react';
 
 import { description, CONTENT_DELIVERY_API_KEY } from 'lib/constants';
-import { Client as APIClient, News } from 'lib/api';
+import { getNewsEntries, News } from 'lib/api/news';
 
 import 'static/css/app.styl';
 import logo from 'static/image/logo.svg';
@@ -24,27 +25,18 @@ const navItems = [
   ['#contact', 'Contact']
 ];
 
-interface Props {}
-
-interface State {
-  newsList: Array<News>
+interface Props {
+  newsEntries: Array<News>;
 }
 
-export default class extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-
-    this.state = {
-      newsList: []
-    };
-  }
-
-  async componentDidMount() {
+export default class extends React.Component<Props> {
+  static async getInitialProps({ asPath }: NextContext): Promise<Props> {
+    let newsEntries: Array<News> = [];
     try {
-      this.setState({
-        newsList: await new APIClient().newsEntries()
-      });
+      newsEntries =  await getNewsEntries({ limit: 5 });
     } catch (error) {}
+
+    return { newsEntries };
   }
 
   render() {
@@ -62,7 +54,7 @@ export default class extends React.Component<Props, State> {
             <main className="o-home-section__content">
               <div className="m-home-news">
                 <ul className="m-home-news__list">
-                  {this.state.newsList.map(news => (
+                  {this.props.newsEntries.map(news => (
                     <li key={news.slug}>
                       <Link href={`/news/${news.slug}`}><a className="m-home-news__item">
                         <div className="m-home-news__item-date">{news.published_at}</div>
@@ -71,9 +63,11 @@ export default class extends React.Component<Props, State> {
                     </li>
                   ))}
                 </ul>
+                {/*
                 <div className="m-home-news__readmore-wrapper">
                   <Link href="/news"><a>Read More</a></Link>
                 </div>
+                */}
               </div>
             </main>
           </div>

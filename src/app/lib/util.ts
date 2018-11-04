@@ -1,3 +1,5 @@
+import pathToRegexp from 'path-to-regexp';
+
 export function getDateString(date: Date | string): string {
   if (typeof date === 'string') {
     date = new Date(date);
@@ -8,4 +10,13 @@ export function getDateString(date: Date | string): string {
   const day: string = ('00' + date.getDate()).slice(-2);
 
   return `${year}.${month}.${day}`;
+}
+
+const PATTERN_NEWS_PATHNAME = pathToRegexp('/news/:slug');
+
+export function getNewsSlug(pathname: string): string | null {
+  const match = pathname.match(PATTERN_NEWS_PATHNAME);
+  const rawSlug = match ? match[1] || null : null;
+
+  return rawSlug ? encodeURIComponent(rawSlug) : null;
 }
