@@ -1,5 +1,6 @@
 import React from 'react';
 import { NextContext } from 'next';
+import Head from 'next/head';
 import Link from 'next/link';
 import $ from 'jquery';
 
@@ -42,6 +43,10 @@ export default class extends React.Component<Props> {
   render() {
     return (
       <General>
+        <Head>
+          <title>OY旅団/OY brigade</title>
+        </Head>
+
         <Nav items={navItems} />
 
         <div className="o-main-visual" id="top">

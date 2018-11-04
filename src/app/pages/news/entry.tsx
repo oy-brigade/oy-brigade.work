@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { NextContext } from 'next';
+import Head from 'next/head';
 import Error from 'next/error';
 import { getNewsEntries, News } from 'lib/api/news';
 import { getNewsSlug } from 'lib/util';
@@ -41,6 +42,10 @@ export default class extends React.Component<Props> {
 
     return (
       <General>
+        <Head>
+          <title>{entry.title} | News | OY旅団/OY brigade</title>
+        </Head>
+
         <Nav items={navItems}></Nav>
 
         <section className="o-news-section">

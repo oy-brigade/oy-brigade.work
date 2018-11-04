@@ -26,7 +26,6 @@ export default class extends Document<DocumentProps> {
     return (
       <html>
         <Head>
-          <title>OY旅団/OY brigade</title>
           <meta name="description" content={DESCRIPTION} />
           <meta property="og:title" content="OY旅団/OY brigade" />
           <meta property="og:description" content="OY旅団はオリジナルゲームを作る同人サークルです。" />
