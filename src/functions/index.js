@@ -22,6 +22,8 @@ const router = (app, handle) => (req, res) => {
 
   if ((matches = REGEXP_PATH_NEWS.exec(pathname))) {
     app.render(req, res, '/news/entry', query);
+  } else if (pathname !== '/' && (matches = /^(.+)\/$/.exec(pathname))) {
+    app.render(req, res, matches[1], query);
   } else {
     handle(req, res, parsedUrl);
   }
