@@ -5,9 +5,13 @@ module.exports = withStylus(withTypeScript({
   distDir: '../../dist/app',
   webpack(config) {
     config.module.rules.push({
-      test: /\.svg/,
+      test: /\.svg$/,
       use: 'raw-loader'
+    },{
+      test: /\.png$/,
+      use: 'url-loader'
     })
+
 
     return config;
   }
